@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256">
+  <defs>
+  	<linearGradient id="background" x1="0%" y1="0%" x2="0%" y2="100%">
+	  <stop offset="30%" stop-color="#80C342" />
+	  <stop offset="100%" stop-color="#59872D" />
+  	</linearGradient>
+  </defs>
+  <g id="qtquick">
+  	<rect x="0" y="0" width="256" height="256" rx="64" ry="64" fill="url(#background)" />
+  	<rect x="64" y="0" width="8" height="256" fill="#006225" />
+  	<rect x="0" y="114" width="256" height="8" fill="#006225" />
+  	<rect x="72" y="0" width="50" height="256" fill="#FFFFFF" />
+  	<rect x="0" y="64" width="256" height="50" fill="#FFFFFF" />
+  </g>
+</svg>
