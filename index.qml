@@ -1,5 +1,5 @@
 import Silk.HTML 5.0
-import 'bootstrap' as Bootstrap
+import Silk.Bootstrap 2.3 as Bootstrap
 
 Html {
     lang: 'ja'
@@ -10,55 +10,45 @@ Html {
         }
         Link { href: '/css/bootstrap.min.css'; rel: 'stylesheet'; media: 'screen' }
         Link { href: '/css/bootstrap-responsive.min.css'; rel: 'stylesheet'; media: 'screen' }
+        Link { rel: 'apple-touch-icon-precomposed'; sizes: '144x144'; href: '/qtquick.svg' }
+        Link { rel: 'apple-touch-icon-precomposed'; sizes: '114x114'; href: '/qtquick.svg' }
+        Link { rel: 'apple-touch-icon-precomposed'; sizes: '72x72'; href: '/qtquick.svg' }
+        Link { rel: 'apple-touch-icon-precomposed'; href: '/qtquick.svg' }
     }
     Body {
         style: 'overflow-y:scroll;padding-top:40px'
         Bootstrap.Container {
-            Bootstrap.NavBar {
+            Bootstrap.Navbar {
                 _class: 'navbar-fixed-top'
-                Div {
-                    _class: 'navbar-inner'
+                A { href: '//qtquick.me'; _class: 'brand'; text: 'qtquick.me' }
+                Bootstrap.Nav {
+                    _class: 'nav'
+                    Bootstrap.NavItem { _class: 'active'; I { _class: 'icon-home'; text: '' } Text { text: 'Home' } }
+                    Bootstrap.NavItem { a.href: '//git.qtquick.me'; a.text: 'Repositories' }
+                    Bootstrap.NavItem { a.href: '//cr.qtquick.me'; a.text: 'Code Review' }
+                    Bootstrap.NavItem { a.href: '//ci.qtquick.me'; a.text: 'Continuous Integration' }
+                    Bootstrap.NavItem { a.href: '//dev.qtquick.me'; a.text: 'Project management' }
+                }
 
-                    A { href: '//qtquick.me'; _class: 'brand'; text: 'qtquick.me' }
-                    Ul {
-                        _class: 'nav'
-                        Li { _class: 'active'; A { I { _class: 'icon-home'; text: '' } Text { text: 'Home' } } }
-                        Li { A { href: '//git.qtquick.me'; text: 'Repositories' } }
-                        Li { A { href: '//cr.qtquick.me'; text: 'Code Review' } }
-                        Li { A { href: '//ci.qtquick.me'; text: 'Continuous Integration' } }
-                        Li { A { href: '//dev.qtquick.me'; text: 'Project management' } }
-                    }
-
-                    Ul {
-                        _class: 'nav pull-left'
-                        Li {
-                            _class: 'dropdown'
-                            A {
-                                href: '#'
-                                _class: 'dropdown-toggle'
-                                property string data_toggle: 'dropdown'
-                                Text { text: 'Admins' }
-                                Span { _class: 'caret' }
-                            }
-                            Ul {
-                                _class: 'dropdown-menu'
-                                Li {
-                                    A {
-                                        href: 'http://twitter.com/%1'.arg('task_jp')
-                                        target: '_blank'
-                                        Img { width: '22'; height: '22'; src: 'http://api.twitter.com/1/users/profile_image?screen_name=%1'.arg('task_jp') }
-                                        Text { text: '@task_jp' }
-                                    }
-                                }
-                                Li {
-                                    A {
-                                        href: 'http://twitter.com/%1'.arg('kenya888')
-                                        target: '_blank'
-                                        Img { width: '22'; height: '22'; src: 'http://api.twitter.com/1/users/profile_image?screen_name=%1'.arg('kenya888') }
-                                        Text { text: '@kenya888' }
-                                    }
-                                }
-                            }
+                Bootstrap.Nav {
+                    _class: 'pull-left'
+                    Bootstrap.NavDropdown {
+                        a.href: '#'
+                        a.contents: [
+                            Text { text: 'Admins' }
+                            , Span { _class: 'caret' }
+                        ]
+                        Bootstrap.NavItem {
+                            a.href: 'http://twitter.com/%1'.arg('task_jp')
+                            a.target: '_blank'
+                            Img { width: '22'; height: '22'; src: 'http://api.twitter.com/1/users/profile_image?screen_name=%1'.arg('task_jp') }
+                            Text { text: '@task_jp' }
+                        }
+                        Bootstrap.NavItem {
+                            a.href: 'http://twitter.com/%1'.arg('kenya888')
+                            a.target: '_blank'
+                            Img { width: '22'; height: '22'; src: 'http://api.twitter.com/1/users/profile_image?screen_name=%1'.arg('kenya888') }
+                            Text { text: '@kenya888' }
                         }
                     }
                 }
@@ -268,7 +258,7 @@ $ git push'
             }
         }
 
-        Script { src: 'http://code.jquery.com/jquery-latest.js' }
+        Script { src: '/js/jquery.js' }
         Script { src: '/js/bootstrap.min.js' }
         Script {
             text: "$('.nav-tabs a').click(function (e) {
