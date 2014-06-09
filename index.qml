@@ -41,13 +41,13 @@ Html {
                         Bootstrap.NavItem {
                             a.href: 'http://twitter.com/%1'.arg('task_jp')
                             a.target: '_blank'
-                            Img { width: '22'; height: '22'; src: 'http://api.twitter.com/1/users/profile_image?screen_name=%1'.arg('task_jp') }
+                            Img { width: '22'; height: '22'; src: 'http://www.gravatar.com/avatar/%1'.arg(Qt.md5('stasuku@gmail.com')) }
                             Text { text: '@task_jp' }
                         }
                         Bootstrap.NavItem {
                             a.href: 'http://twitter.com/%1'.arg('kenya888')
                             a.target: '_blank'
-                            Img { width: '22'; height: '22'; src: 'http://api.twitter.com/1/users/profile_image?screen_name=%1'.arg('kenya888') }
+                            Img { width: '22'; height: '22'; src: 'http://www.gravatar.com/avatar/%1'.arg(Qt.md5('kenya888@gmail.com')) }
                             Text { text: '@kenya888' }
                         }
                     }
